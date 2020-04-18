@@ -1,5 +1,5 @@
 const state = {
-  name: "小三",
+  name: "大斌子",
   history:[]
 };
 /*
@@ -13,14 +13,14 @@ const state = {
 const mutations = {
   // 不带参数
   noParamsChangeName(state) {
-    state.name = "小四";
-    state.history.push(state.name);
+    state.name = "小斌子";
+    // state.history.push(state.name);
   },
   // 带参数修改store的name
   hasParamsChangeName(state, params) {
     console.log(params)
     state.name = params.name;
-    state.history.push(state.name);
+    // state.history.push(state.name);
   }
 };
 // 1.action 与 mutation 除了使用了异步操作和调用mutation，其它使用并无差别

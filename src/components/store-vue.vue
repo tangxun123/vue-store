@@ -3,7 +3,7 @@
   <!-- https://www.cnblogs.com/xihao/p/11420884.html#4520331 -->
   <div>
     <h3>demo模块name：{{ this.$store.state.demo.name }}</h3>
-    <el-input v-model="name" clearable></el-input>
+    <el-input v-model="name" placeholder="请输入参数" clearable></el-input>
     <el-button type="primary" @click="noParamsChangeName"
       >mutation不带参数</el-button
     >
@@ -55,9 +55,9 @@
     <el-button @click="someChange">someChange</el-button>
 
     <!-- 严格模式下直接修改store.state的值会报错 -->
-    <!-- <el-input v-model="newString"></el-input> -->
+    <!-- <el-input v-model="newString"></el-input>
 
-    <div>{{getHistory}}</div>
+    <div>{{getHistory}}</div> -->
   </div>
 </template>
 <script>
@@ -80,9 +80,9 @@ export default {
       getName: state => {
         return state.demo.name;
       },
-      getHistory(state){
-        return state.demo.history;
-      }
+      // getHistory(state){
+      //   return state.demo.history;
+      // }
     }),
     ...mapGetters(["setNameDescription", "setNameDescriptionParams"]),
     // newString: {

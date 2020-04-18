@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import One from '@/components/One'
-import Two from '@/components/Two'
-import Three from '@/components/Three'
-import index from '@/myFile/index'
-import info from '@/myFile/info'
+import state from '@/components/state'
+import mutation from '@/components/mutation'
+import action from '@/components/action'
+import getters from '@/components/getters'
+import modules from '@/components/modules'
+import hotReload from '@/components/hotReload'
 import StoreVue from '@/components/store-vue'
 
 Vue.use(Router)
@@ -13,19 +14,28 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/index',
-      name: 'index',
-      component: index
+      path: '/state',
+      component: state
     },
     {
-      path: '/One',
-      name: 'One',
-      component: One
+      path: '/mutation',
+      component: mutation
     },
     {
-      path: '/Two',
-      name: 'Two',
-      component: Two
+      path: '/action',
+      component: action
+    },
+    {
+      path: '/getters',
+      component: getters
+    },
+    {
+      path: '/modules',
+      component: modules
+    },
+    {
+      path: '/hotReload',
+      component: hotReload
     },
     {
       path: '/Store-vue',
@@ -33,19 +43,9 @@ export default new Router({
       component: StoreVue
     },
     {
-      path: '/Three',
-      name: 'Three',
-      component: Three
-    },
-    {
-      path: '/info',
-      name: 'info',
-      component: info
-    },
-    {
       path: '/',
-      redirect: 'index',
-      component: index
+      redirect: 'state',
+      component: state
     }
   ]
 })

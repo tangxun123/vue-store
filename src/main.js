@@ -7,7 +7,6 @@ import ElementUi from 'element-ui' // 导入elm
 import 'element-ui/lib/theme-chalk/index.css';
 import D2Crud from '@d2-projects/d2-crud' // 导入d2
 import store from "./store/index" // 引入store
-import storeVue from "./components/store-vue.vue"
 
 import axios from 'axios'
 Vue.prototype.$axios = axios;
@@ -31,11 +30,12 @@ store.registerModule("newModule",{
   state: {
     newData: "someNew"
   },
-  mutations: {},
+  mutations: {
+  },
   actions: {},
   getters: {}
 })
-// store.unregisterModule("newModule"); // 不能卸载静态模块
+store.unregisterModule("newModule"); // 不能卸载静态模块
 
 /* eslint-disable no-new */
 new Vue({
@@ -43,6 +43,5 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
-  store,
-  // render:h => h(storeVue)
+  store
 })
