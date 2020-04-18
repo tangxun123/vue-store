@@ -10,28 +10,25 @@ export const mutations = {
   }
 };
 
-const actions = {
-  setTimeAsync(context, params) {
-    console.log(params);
-    setTimeout(() => {
-      context.commit("setTime", params);
-    }, 1000);
-  },
-//   getDemoMeth(context) {
-//    context.commit("noParamsChangeName");
-//   }
-};
-// 在带命名空间的模块注册全局 action，你可添加 root: true
 // const actions = {
-//   someAction: {
-//     root: true,
-//     handler(context) {
-//       setTimeout(() => {
-//         context.commit("noParamsChangeName");
-//       }, 1000);
-//     }
+//   setTimeAsync(context, params) {
+//     console.log(params);
+//     setTimeout(() => {
+//       context.commit("setTime", params);
+//     }, 1000);
 //   }
 // };
+// 在带命名空间的模块注册全局 action，你可添加 root: true
+const actions = {
+  setTimeAsync: {
+    root: true,
+    handler(context) {
+      setTimeout(() => {
+        context.commit("noParamsChangeName");
+      }, 1000);
+    }
+  }
+};
 const getters = {
   // 带参数
   setTimeGetter: state => val => {
