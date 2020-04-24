@@ -34,4 +34,8 @@ export default {
 .header-bread{
   margin-bottom: 60px;
 }
+#nprogress .bar {
+  /* 自定义进度条颜色 */
+  background: red !important;
+}
 </style>
