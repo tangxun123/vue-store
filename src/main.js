@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import nprogress from "nprogress"; // 导入网页加载进度条
+import 'nprogress/nprogress.css';　// 导入网页加载进度条
 import ElementUi from 'element-ui' // 导入elm
 import 'element-ui/lib/theme-chalk/index.css';
 import D2Crud from '@d2-projects/d2-crud' // 导入d2
@@ -36,6 +38,16 @@ store.registerModule("newModule",{
   getters: {}
 })
 store.unregisterModule("newModule"); // 不能卸载静态模块
+
+
+// 路由跳转　显示　进度条
+router.beforeEach((to,from,next)=>{
+  nprogress.start();
+  next();
+})
+router.afterEach( () => {
+  nprogress.done();  
+})
 
 /* eslint-disable no-new */
 new Vue({
