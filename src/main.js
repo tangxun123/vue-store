@@ -42,11 +42,21 @@ store.unregisterModule("newModule"); // 不能卸载静态模块
 
 // 路由跳转　显示　进度条
 router.beforeEach((to,from,next)=>{
+  let routerName = [];
+  router.options.routes.forEach(item => {
+    routerName.push(item.path);
+  })
+  if(routerName.includes(to.fullPath)){
+    console.log(to.fullPath);
+  }else{
+    next({path:"/p404"});
+    return;
+  }
   nprogress.start();
   next();
 })
 router.afterEach( () => {
-  nprogress.done();  
+  nprogress.done();
 })
 
 /* eslint-disable no-new */

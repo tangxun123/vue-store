@@ -9,6 +9,7 @@
         <el-breadcrumb-item :to="{ path: '/getters' }">getters</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ path: '/modules' }">modules</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ path: '/hotReload' }">hotReload</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/404NotFind' }">404</el-breadcrumb-item>
         <el-breadcrumb-item></el-breadcrumb-item>
       </el-breadcrumb>
     </header>

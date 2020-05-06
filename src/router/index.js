@@ -8,6 +8,7 @@ import getters from '@/components/getters'
 import modules from '@/components/modules'
 import hotReload from '@/components/hotReload'
 import StoreVue from '@/components/store-vue'
+import p404 from '@/components/p404'
 
 Vue.use(Router)
 
@@ -46,6 +47,10 @@ export default new Router({
       path: '/',
       redirect: 'state',
       component: state
+    },
+    {
+      path: '/p404',
+      component: p404
     }
   ]
 })
